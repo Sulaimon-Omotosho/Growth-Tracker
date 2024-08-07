@@ -1,13 +1,13 @@
 // import PatientForms from '@/components/forms/PatientForms'
 // import PasskeyModal from '@/components/PasskeyModal'
 import { Button } from '@/components/ui/button'
-import { getSession } from '@/lib/actions/session.actions'
+// import { getSession } from '@/lib/actions/session.actions'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default async function Home({ searchParams }: SearchParamProps) {
-  const isAdmin = searchParams.admin === 'true'
-  const session = await getSession()
+export default async function Home() {
+  // const isAdmin = searchParams.admin === 'true'
+  // const session = await getSession()
 
   return (
     <div className='flex h-screen max-h-screen'>
@@ -22,7 +22,10 @@ export default async function Home({ searchParams }: SearchParamProps) {
             alt='Patient'
             className='mb-12 h-80 w-fit'
           />
-          <Link href={session.isLoggedIn ? '/dashboard' : 'login'}>
+          <Link
+            href='login'
+            // href={session.isLoggedIn ? '/dashboard' : 'login'}
+          >
             <Button className={'shad-primary-btn w-full'}>Welcome</Button>
           </Link>
           {/* <PatientForms /> */}
