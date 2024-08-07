@@ -22,7 +22,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
             alt='Patient'
             className='mb-12 h-80 w-fit'
           />
-          <Link href={session.isLoggedIn ? '/profile' : 'login'}>
+          <Link href={session.isLoggedIn ? '/dashboard' : 'login'}>
             <Button className={'shad-primary-btn w-full'}>Welcome</Button>
           </Link>
           {/* <PatientForms /> */}
