@@ -1,4 +1,4 @@
-export const GenderOptions = ['male', 'female', 'other']
+export const GenderOptions = ['male', 'female']
 
 export const PatientFormDefaultValues = {
   firstName: '',
@@ -39,6 +39,8 @@ export const IdentificationTypes = [
   'Student ID Card',
   'Voter ID Card',
 ]
+
+export const MaritalStatus = ['Single', 'Married', 'Divorced', 'Widowed']
 
 export const Doctors = [
   {
