@@ -12,7 +12,7 @@ const MiddlewarePage = async () => {
         width={1000}
         height={1000}
         alt='Avatar'
-        src={session?.user?.image}
+        src={session?.user?.image!}
       />
       <p className='text-lg'>{session?.user?.email}</p>
     </div>
