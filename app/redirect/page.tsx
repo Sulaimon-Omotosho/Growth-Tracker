@@ -10,9 +10,9 @@ const RedirectPage = async () => {
 
   const userId = user.id
 
-  if (session?.user) {
-    redirect(`/member/${userId}/dashboard`)
-  }
+  // if (session?.user) {
+  //   redirect(`/member/${userId}/dashboard`)
+  // }
 
   return (
     <div className='flex h-screen justify-center items-center'>
