@@ -60,3 +60,20 @@ export async function getUser(userId: string) {
     throw error
   }
 }
+
+export async function getUserByEmail(email: string) {
+  try {
+    const user = await db.user.findUnique({
+      where: { email: email },
+    })
+
+    if (!user) {
+      throw new Error('User not found')
+    }
+
+    return user
+  } catch (error) {
+    console.error('Error fetching user:', error)
+    throw error
+  }
+}

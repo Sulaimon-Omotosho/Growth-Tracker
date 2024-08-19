@@ -3,7 +3,7 @@ import LoginGoogle from '@/components/LoginGoogle'
 import Image from 'next/image'
 import React from 'react'
 
-const SignIn = () => {
+const Login = () => {
   return (
     <div className='p-4 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center text-white '>
       <section className='h-full shadow-2xl rounded-md flex flex-col md:flex-row md:h-[70%] md:w-full lg:w-[60%] xl:w-1/2 gap-8 '>
@@ -30,4 +30,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default Login

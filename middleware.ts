@@ -1,10 +1,8 @@
-// export { auth as middleware } from '@/auth'
-
 import { NextRequest, NextResponse } from 'next/server'
 // import type { NextRequest } from 'next/server'
 import { auth } from '@/lib/auth'
 
-const protectedRoutes = ['/middleware']
+const protectedRoutes = ['/login', '/signup']
 
 export default async function middleware(request: NextRequest) {
   const session = await auth()
@@ -13,8 +11,8 @@ export default async function middleware(request: NextRequest) {
     request.nextUrl.pathname.startsWith(route)
   )
 
-  if (!session && isProtected) {
-    const absoluteURL = new URL('/', request.nextUrl.origin)
+  if (session && isProtected) {
+    const absoluteURL = new URL('/redirect', request.nextUrl.origin)
     return NextResponse.redirect(absoluteURL.toString())
   }
 

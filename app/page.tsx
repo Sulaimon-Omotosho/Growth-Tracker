@@ -1,5 +1,6 @@
 // import PatientForms from '@/components/forms/PatientForms'
 // import PasskeyModal from '@/components/PasskeyModal'
+import Logout from '@/components/Logout'
 import { Button } from '@/components/ui/button'
 // import { getSession } from '@/lib/actions/session.actions'
 import Image from 'next/image'
@@ -33,9 +34,10 @@ export default async function Home() {
             <p className='justify-items-end text-dark-600 xl:text-left'>
               © 2024 Growth Tracker
             </p>
-            <Link href='/?admin=true' className='text-green-500'>
+            {/* <Link href='/?admin=true' className='text-green-500'>
               Admin
-            </Link>
+            </Link> */}
+            <Logout />
           </div>
         </div>
       </section>

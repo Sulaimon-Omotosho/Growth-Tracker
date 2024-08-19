@@ -6,6 +6,7 @@ import Image from 'next/image'
 
 const Navbar = async () => {
   const session = await auth()
+
   return (
     <nav className='border-b bg-slate-300 w-full flex items-center px-10 h-[80px]'>
       <div className=' flex w-full items-center justify-between my-4'>
