@@ -68,50 +68,6 @@ export const loginWithEmail = async (formData: FormData) => {
   revalidatePath('/')
 }
 
-// SIGNUP WITH EMAIL
-// export const signUpWithEmail = async (formData: FormData) => {
-//   const email = formData.get('email') as string
-//   const password = formData.get('password') as string
-
-//   const existingUser = await getUserByEmail(email)
-//   if (existingUser) {
-//     return { error: 'User already exists' }
-//   }
-
-//   try {
-//     const hash = saltAndHashPassword(password)
-//     const newUser = await db.user.create({
-//       data: {
-//         email,
-//         hashedPassword: hash,
-//         role: 'USER',
-//       },
-//     })
-
-//     const session = await getSession()
-
-//     if (session?.user?.id) {
-//       const userId = session.user.id
-//       const loginData = {
-//         email: newUser.email,
-//         password,
-//         redirectTo: `/member/${userId}/register`,
-//       }
-
-//       await signIn('credentials', loginData)
-//     } else {
-//       console.error('User ID not found in session')
-//       throw new Error('Unexpected error: User ID missing')
-//     }
-//   } catch (error: any) {
-//     if (error instanceof AuthError) {
-//       return { error: 'Something went wrong during signup' }
-//     }
-//     throw error
-//   }
-//   revalidatePath('/')
-// }
-
 export const signUpWithEmail = async (formData: FormData) => {
   const email = formData.get('email') as string
   const password = formData.get('password') as string
@@ -139,12 +95,17 @@ export const signUpWithEmail = async (formData: FormData) => {
 
     await signIn('credentials', loginData)
 
-    // Optional: Revalidate the path if needed
     revalidatePath('/')
+
+    return { success: true }
   } catch (error: any) {
     if (error instanceof AuthError) {
       return { error: 'Something went wrong during signup' }
     }
+    // else {
+    //   console.error('Unexpected error:', error)
+    //   return { error: 'An unexpected error occurred' }
+    // }
     throw error
   }
 }

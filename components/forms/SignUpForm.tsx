@@ -36,7 +36,12 @@ const SignUpForm = () => {
   })
 
   const onSubmit = async (data: z.infer<typeof UserFormValidation>) => {
-    const response = await signUpWithEmail(data)
+    const formData = new FormData()
+
+    formData.append('email', data.email)
+    formData.append('password', data.password)
+
+    const response = await signUpWithEmail(formData)
 
     if (response?.error) {
       setError(response.error)
@@ -47,11 +52,7 @@ const SignUpForm = () => {
 
   return (
     <Form {...form}>
-      <form
-        action={onSubmit}
-        // onSubmit={form.handleSubmit(onSubmit)}
-        className='space-y-6 flex-1'
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6 flex-1'>
         <div className='relative'>
           <CustomFormField
             fieldType={FormFieldType.INPUT}

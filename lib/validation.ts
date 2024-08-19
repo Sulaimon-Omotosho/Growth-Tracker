@@ -7,9 +7,9 @@ export const UserFormValidation = z.object({
     .min(2, 'Password must be at least 8 characters')
     .max(20, 'Password must be at most 20 characters'),
   email: z.string().email('Invalid email address'),
-  phone: z
-    .string()
-    .refine((phone) => /^\+\d{10,15}$/.test(phone), 'Invalid phone number'),
+  // phone: z
+  //   .string()
+  //   .refine((phone) => /^\+\d{10,15}$/.test(phone), 'Invalid phone number'),
 })
 
 export const LoginFormValidation = z.object({
