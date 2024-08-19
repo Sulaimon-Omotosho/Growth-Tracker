@@ -37,7 +37,6 @@ export default async function Home() {
             {/* <Link href='/?admin=true' className='text-green-500'>
               Admin
             </Link> */}
-            <Logout />
           </div>
         </div>
       </section>

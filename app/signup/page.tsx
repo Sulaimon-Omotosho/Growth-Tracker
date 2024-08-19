@@ -1,9 +1,17 @@
 import SignUpForm from '@/components/forms/SignUpForm'
 import LoginGoogle from '@/components/LoginGoogle'
+import { auth } from '@/lib/auth'
 import Image from 'next/image'
+import { redirect } from 'next/navigation'
 import React from 'react'
 
-const SignUpPage = () => {
+const SignUpPage = async () => {
+  const session = await auth()
+
+  if (session?.user) {
+    redirect('/redirect')
+  }
+
   return (
     <div className='p-4 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center text-white '>
       {/* Box */}

@@ -1,9 +1,17 @@
 import LoginInForm from '@/components/forms/LoginInForm'
 import LoginGoogle from '@/components/LoginGoogle'
+import { auth } from '@/lib/auth'
 import Image from 'next/image'
+import { redirect } from 'next/navigation'
 import React from 'react'
 
-const Login = () => {
+const Login = async () => {
+  const session = await auth()
+
+  if (session?.user) {
+    redirect('/redirect')
+  }
+
   return (
     <div className='p-4 h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] flex items-center justify-center text-white '>
       <section className='h-full shadow-2xl rounded-md flex flex-col md:flex-row md:h-[70%] md:w-full lg:w-[60%] xl:w-1/2 gap-8 '>
