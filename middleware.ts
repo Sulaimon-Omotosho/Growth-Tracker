@@ -5,18 +5,26 @@ import { auth } from '@/lib/auth'
 const protectedRoutes = ['/login', '/signup']
 
 export default async function middleware(request: NextRequest) {
-  const session = await auth()
+  try {
+    const session = await auth()
 
-  const isProtected = protectedRoutes.some((route) =>
-    request.nextUrl.pathname.startsWith(route)
-  )
+    const isProtected = protectedRoutes.some((route) =>
+      request.nextUrl.pathname.startsWith(route)
+    )
 
-  if (session && isProtected) {
-    const absoluteURL = new URL('/redirect', request.nextUrl.origin)
-    return NextResponse.redirect(absoluteURL.toString())
+    if (session && isProtected) {
+      // const absoluteURL = new URL('/redirect', request.nextUrl.origin)
+      // return NextResponse.redirect(absoluteURL.toString())
+      const redirectUrl = new URL('/redirect', request.nextUrl.origin)
+      return NextResponse.redirect(redirectUrl)
+    }
+
+    return NextResponse.next()
+  } catch (error) {
+    console.error('Middleware error:', error)
+
+    return NextResponse.error()
   }
-
-  return NextResponse.next()
 }
 
 export const config = {
