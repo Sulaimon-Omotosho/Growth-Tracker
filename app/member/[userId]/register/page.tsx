@@ -1,4 +1,5 @@
 import RegisterForm from '@/components/forms/RegisterForm'
+import { ModeToggle } from '@/components/ModeToggle'
 import { auth } from '@/lib/auth'
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
@@ -12,7 +13,10 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
   }
 
   return (
-    <div className='flex h-screen max-h-screen text-white'>
+    <div className='flex h-screen max-h-screen'>
+      <div className='absolute top-4 right-4'>
+        <ModeToggle />
+      </div>
       <section className='remove-scrollbar container '>
         <div className='sub-container max-w-[860px] flex-1 flex-col py-10'>
           <div className='flex gap-4 items-center mb-12'>
@@ -20,8 +24,8 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
               src='/assets/images/logo-hicc.jpeg'
               height={1000}
               width={1000}
-              alt='Patient'
-              className='h-14 w-fit rounded-full'
+              alt='logo'
+              className='h-14 w-fit rounded-full ring-1 ring-black'
             />
             <h1 className=' text-lg font-bold'>Growth Tracker</h1>
           </div>

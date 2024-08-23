@@ -15,19 +15,19 @@ const LoginGoogle = () => {
     //   <FaGoogle className='text-white' />
     //   <p className='text-white'>Login with Google</p>
     // </div>
-                <Button
-              onClick={() => login('google')}
-              className='flex gap-4 p-4 ring-1 ring-orange-200 rounded-md w-full'
-            >
-              <Image
-                src='/assets/images/google.png'
-                alt=''
-                width={20}
-                height={20}
-                className='object-contain'
-              />
-              <span>Use Google</span>
-            </Button>
+    <Button
+      onClick={() => login('google')}
+      className='flex gap-4 p-4 ring-1 ring-orange-400 dark:ring-orange-200 rounded-md w-full'
+    >
+      <Image
+        src='/assets/images/google.png'
+        alt=''
+        width={20}
+        height={20}
+        className='object-contain'
+      />
+      <span>Use Google</span>
+    </Button>
   )
 }
 

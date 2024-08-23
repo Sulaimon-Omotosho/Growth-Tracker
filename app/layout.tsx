@@ -6,6 +6,7 @@ import { auth } from '@/lib/auth'
 import Navbar from '@/components/Navbar'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
+import { ModeToggle } from '@/components/ModeToggle'
 
 const fontSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -27,20 +28,18 @@ export default async function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={cn(
-          'min-h-screen bg-dark-300 font-sans antialiased',
-          fontSans.variable
-        )}
+        className={cn('min-h-screen font-sans antialiased', fontSans.variable)}
       >
         {' '}
         <SessionProvider session={session}>
           <ThemeProvider
             attribute='class'
-            defaultTheme='dark'
-            // enableSystem
-            // disableTransitionOnChange
+            defaultTheme='system'
+            enableSystem
+            disableTransitionOnChange
           >
             {/* <Navbar /> */}
+            {/* <ModeToggle /> */}
             {children}
           </ThemeProvider>
         </SessionProvider>

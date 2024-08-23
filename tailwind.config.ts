@@ -45,6 +45,12 @@ const config = {
           600: '#76828D',
           700: '#ABB8C4',
         },
+        susuSky: '#C3EBFA',
+        susuSkyLight: '#EDF9FD',
+        susuPurple: '#CFCEFF',
+        susuPurpleLight: '#F1F0FF',
+        susuYellow: '#FAE27C',
+        susuYellowLight: '#FEFCE8',
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],

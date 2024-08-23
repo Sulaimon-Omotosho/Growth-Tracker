@@ -52,7 +52,7 @@ const LoginInForm = () => {
       <form
         //  action={loginWithEmail}
         action={onSubmit}
-        className='space-y-6 flex-1'
+        className='space-y-6 flex-1 bg-transparent'
       >
         <div className='relative'>
           <CustomFormField

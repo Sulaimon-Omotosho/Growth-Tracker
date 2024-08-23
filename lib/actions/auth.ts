@@ -25,8 +25,8 @@ const getUserByEmail = async (email: string) => {
 
 // LOGIN
 export const login = async (provider: string) => {
-  await signIn(provider, { redirectTo: '/' })
-  revalidatePath('/')
+  await signIn(provider, { redirectTo: '/redirect' })
+  revalidatePath('/redirect')
 }
 
 // LOGOUT

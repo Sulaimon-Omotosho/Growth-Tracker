@@ -96,7 +96,7 @@ const RegisterForm = ({ userId, session }: RegisterFormProps) => {
       >
         <section className='space-y-4'>
           <h1 className='header'>Welcome 👋</h1>
-          <p className='text-dark-700'>Let us know more about you.</p>
+          <p className='text-dark-600'>Let us know more about you.</p>
         </section>
         <section className='space-y-6'>
           <div className='mb-9 space-y-1'>
@@ -143,7 +143,7 @@ const RegisterForm = ({ userId, session }: RegisterFormProps) => {
               renderSkeleton={(field) => (
                 <FormControl>
                   <RadioGroup
-                    className='flex flex-wrap gap-6 xl:justify-between'
+                    className='flex flex-wrap gap-6 xl:justify-between text-white capitalize'
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
@@ -176,7 +176,7 @@ const RegisterForm = ({ userId, session }: RegisterFormProps) => {
               renderSkeleton={(field) => (
                 <FormControl>
                   <RadioGroup
-                    className='flex h-11 gap-6 xl:justify-between'
+                    className='flex h-11 gap-6 xl:justify-between text-white capitalize'
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
@@ -225,7 +225,7 @@ const RegisterForm = ({ userId, session }: RegisterFormProps) => {
               renderSkeleton={(field) => (
                 <FormControl>
                   <RadioGroup
-                    className='flex h-11 gap-6 xl:justify-between'
+                    className='flex h-11 gap-6 xl:justify-between text-white capitalize'
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >

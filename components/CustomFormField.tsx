@@ -115,13 +115,13 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             withCountryCallingCode
             value={field.value as E164Number | undefined}
             onChange={field.onChange}
-            className='input-phone'
+            className='input-phone text-white'
           />
         </FormControl>
       )
     case FormFieldType.DATE_PICKER:
       return (
-        <div className='flex rounded-md border border-dark-500 bg-dark-400'>
+        <div className='flex rounded-md border border-dark-500 bg-dark-400 text-white'>
           <Image
             src='/assets/icons/calendar.svg'
             height={24}
@@ -178,6 +178,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
               id={props.name}
               checked={field.value}
               onCheckedChange={field.onChange}
+              className='border-dark-500'
             />
             <label htmlFor={props.name} className='checkbox-label'>
               {props.label}
