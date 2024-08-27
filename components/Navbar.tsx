@@ -41,8 +41,7 @@ const Navbar = async () => {
         </div>
         <div className='bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer relative'>
           <Image
-            // src='/assets/icons/announcement.png'
-            src={user?.image ? user.image : '/assets/icons/announcement.png'}
+            src='/assets/icons/announcement.png'
             alt='icon'
             width={20}
             height={20}
@@ -58,7 +57,7 @@ const Navbar = async () => {
           </span>
         </div>
         <Image
-          src='/assets/icons/avatar.png'
+          src={user?.image ? user.image : '/assets/icons/avatar.png'}
           alt='avatar'
           width={36}
           height={36}

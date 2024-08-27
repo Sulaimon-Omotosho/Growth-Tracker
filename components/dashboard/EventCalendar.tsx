@@ -2,27 +2,24 @@
 
 import { events } from '@/constants'
 import Image from 'next/image'
-import React, { useState } from 'react'
-import { Calendar } from '@/components/ui/calendar'
+import { useState } from 'react'
+import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css'
 
 type ValuePiece = Date | null
 
 type Value = ValuePiece | [ValuePiece, ValuePiece]
 
 const EventCalendar = () => {
-  const [date, setDate] = React.useState<Date | undefined>(new Date())
+  const [value, onChange] = useState<Value>(new Date())
 
   return (
-    <div className=' p-4 rounded-md'>
-      {/* <Calendar onChange={onChange} value={value} /> */}
-      <div className='flex items-center justify-center w-full'>
-        <Calendar
-          mode='single'
-          selected={date}
-          onSelect={setDate}
-          className='rounded-md border w-full'
-        />
-      </div>
+    <div className=' p-4 rounded-md w-full'>
+      <Calendar
+        className='w-full dark:bg-black'
+        onChange={onChange}
+        value={value}
+      />
       <div className='flex items-center justify-between'>
         <h1 className='text-xl font-semibold my-4'>Events</h1>
         <Image
