@@ -11,7 +11,7 @@ const RedirectPage = async () => {
   const userId = user.id
 
   if (session?.user) {
-    redirect(`/member/${userId}/admin`)
+    redirect(`/member/${userId}/`)
   }
 
   return (

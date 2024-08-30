@@ -9,7 +9,8 @@ import { auth } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import React from 'react'
 
-const AdminDashboardPage = async ({ params: { userId } }: SearchParamProps) => {
+// const AdminDashboardPage = async ({ params: { userId } }: SearchParamProps) => {
+const AdminDashboardPage = async ({ userId }: any) => {
   const user = await getUser(userId)
 
   // if (user.role !== 'ADMIN') {

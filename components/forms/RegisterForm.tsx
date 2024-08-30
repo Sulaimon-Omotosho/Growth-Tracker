@@ -78,7 +78,7 @@ const RegisterForm = ({ userId, session }: RegisterFormProps) => {
       }
 
       console.log('User updated successfully:', result)
-      router.push(`/member/${userId}/dashboard`)
+      router.push(`/member/${userId}/admin`)
     } catch (error) {
       console.error('Error updating user:', error)
     } finally {

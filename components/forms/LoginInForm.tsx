@@ -43,7 +43,7 @@ const LoginInForm = () => {
     if (response?.error) {
       setError(response.error)
     } else {
-      router.push('/dashboard')
+      router.push('/redirect')
     }
   }
 
